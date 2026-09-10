@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">Career Dashboard</p>
+                <h1>Job Application Tracker</h1>
+                <p class="subtitle">
+                    Keep track of applications, interview progress, and outcomes.
+                </p>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span>Total Applications</span>
+                <strong id="totalCount">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Interviews</span>
+                <strong id="interviewCount">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Offers</span>
+                <strong id="offerCount">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Application</h2>
+
+            <form id="applicationForm" class="application-form">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input
+                        type="text"
+                        id="company"
+                        placeholder="Example: Microsoft"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input
+                        type="text"
+                        id="position"
+                        placeholder="Example: Software Engineer"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Application Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Add Application
+                </button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="toolbar">
+                <div>
+                    <h2>Applications</h2>
+                    <p class="small-text">Search or filter your saved applications.</p>
+                </div>
+
+                <div class="toolbar-controls">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search company or position"
+                    >
+
+                    <select id="filterStatus">
+                        <option value="All">All Statuses</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="applicationList"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
